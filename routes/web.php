@@ -17,4 +17,4 @@ Route::get('/', function () {
 
 Route::get('/login', 'Auth\LoginController@login');
 
-Route::get('/simp', 'Auth\LoginController@load');
+Route::get('/load', 'Auth\LoginController@load');
