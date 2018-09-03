@@ -18,3 +18,6 @@ Route::get('/', function () {
 Route::get('/login', 'Auth\LoginController@login');
 
 Route::get('/load', 'Auth\LoginController@load');
+
+Route::get('/master-inventory', 'InventoryController@getMaster');
+
