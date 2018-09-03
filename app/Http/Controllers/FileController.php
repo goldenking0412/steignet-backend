@@ -23,6 +23,9 @@ class FileController extends Controller
             'Key'    => $keyname
         ]);
 
+        /*Remove last break line character*/
+        $result['Body'] = rtrim($result['Body'], '\n');
+
         return $result['Body'];
     }
 }
