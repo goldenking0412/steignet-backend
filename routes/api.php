@@ -16,3 +16,7 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::post('/steignet-search', 'SearchController@SearchData');
+Route::get('/craglist-data', 'InventoryController@Craglist');
+Route::get('/passthrough', 'InventoryController@PassThrough');
