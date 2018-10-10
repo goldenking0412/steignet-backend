@@ -46,7 +46,7 @@ class InventoryController extends Controller
         $encryptionKey = SecretKey::where('name', '=', 'encryptionKey')->first()->value;
         $algorithmEncryption = SecretKey::where('name', '=', 'algorithmEncryption')->first()->value;
         $crypt = new Encrypter($encryptionKey, $algorithmEncryption);
-        $url = route('login', $crypt->encrypt($constructionApp));
+        $url = 'http://construction.steignet.com/authentication/'.$crypt->encrypt($constructionApp));
         return $url;
     }
 }
