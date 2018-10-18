@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use App\Steignetdata;
 use App\Listing;
 use App\Property;
+use App\Enumeration;
 
 
 class SearchController extends Controller
@@ -22,9 +23,9 @@ class SearchController extends Controller
 
         $type = $request->input('type');
         if($type == 'deattach')
-            $type_value = '1676';
-        else
             $type_value = '1677';
+        else
+            $type_value = '1676';
 
 
         
@@ -32,7 +33,7 @@ class SearchController extends Controller
         
         
         $result = $result->leftjoin('property','listing.Property_ID','=','property.id');
-
+        $result = $result->leftjoin('enumeration','listing.MlsStatus','=','enumberation.id');
         
         $total_bedroom = $request->input('total_bedroom');
         if($total_bedroom != '')
@@ -111,9 +112,9 @@ class SearchController extends Controller
         // $highschool = $request->input('highschool');
         // if($highschool != '')
         //     $result = $result->where('BedroomsTotal','=',$highschool);
-        // $status = $request->input('status');
-        // if($status != '')
-        //     $result = $result->where('BedroomsTotal','=',$status);
+        $status = $request->input('status');
+        if($status != '')
+             $result = $result->where('enumberation.LookupValue','=',$status);
 
         $result = $result->get();
         
