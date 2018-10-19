@@ -33,7 +33,7 @@ class SearchController extends Controller
         
         
         $result = $result->leftjoin('property','listing.Property_ID','=','property.id');
-        $result = $result->leftjoin('enumerations','listing.MlsStatus','=','enumberations.id');
+        $result = $result->leftjoin('enumerations','listing.MlsStatus','=','enumerations.id');
         
         $total_bedroom = $request->input('total_bedroom');
         if($total_bedroom != '')
@@ -114,7 +114,7 @@ class SearchController extends Controller
         //     $result = $result->where('BedroomsTotal','=',$highschool);
         $status = $request->input('status');
         if($status != '')
-             $result = $result->where('enumberations.LookupValue','=',$status);
+             $result = $result->where('enumerations.LookupValue','=',$status);
 
         $result = $result->get();
         
