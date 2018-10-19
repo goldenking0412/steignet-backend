@@ -7,5 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Enumeration extends Model
 {
-    protected $table = 'enumeration';
+    protected $table = 'enumerations';
 }
