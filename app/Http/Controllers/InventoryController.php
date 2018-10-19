@@ -9,6 +9,7 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use App\Steignetdata;
 use App\Craglist;
 use App\SecretKey;
+use App\MasterInventory;
 use DB;
 use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\Model;
@@ -17,6 +18,7 @@ use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Encryption\Encrypter;
 use Illuminate\Routing\UrlGenerator;
 use Illuminate\Support\Facades\Route;
+
 
 class InventoryController extends Controller
 {
@@ -49,4 +51,10 @@ class InventoryController extends Controller
         $url = 'http://construction.steignet.com/authentication/'.$crypt->encrypt($constructionApp);
         return $url;
     }
+
+    public function Master_inventory(){
+        $result = MasterInventory::get();
+        return $result;
+    }
+
 }
