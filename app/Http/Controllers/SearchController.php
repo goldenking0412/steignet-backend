@@ -26,9 +26,6 @@ class SearchController extends Controller
             $type_value = '1677';
         else
             $type_value = '1676';
-
-          var_dump(111);
-        exit();
         
         $result = Listing::where('PropertyType','=',$type_value);
         
@@ -43,7 +40,7 @@ class SearchController extends Controller
         $total_bathroom = $request->input('total_bathroom');
         if($total_bathroom != '')
             $result = $result->where('listing.BathroomsFull','=',$total_bathroom);
-      
+
         $sqFt = $request->input('sqft');
         // if($sqFt != '')
         //     $result = $result->where('BedroomsTotal','=',$sqFt);
