@@ -26,9 +26,11 @@ class SearchController extends Controller
             $type_value = '1677';
         else
             $type_value = '1676';
-        
+
         $result = Listing::where('PropertyType','=',$type_value);
+        $result = $result->get();
         
+        return $result;
         
         $result = $result->leftjoin('property','listing.Property_ID','=','property.id');
         $result = $result->leftjoin('enumerations','listing.MlsStatus','=','enumerations.id');
