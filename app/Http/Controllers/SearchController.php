@@ -27,7 +27,7 @@ class SearchController extends Controller
         else
             $type_value = '1676';
 
-        $result = Listing::where('PropertyType','=',$type_value);
+        $result = Listing::where('PropertyType','=',$type_value)->limit(100);
         $result = $result->get();
         
         return $result;
