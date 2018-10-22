@@ -21,6 +21,8 @@ class SearchController extends Controller
     }
     public function SearchData(Request $request){
 
+        ini_set('memory_limit','2048M');
+
         $type = $request->input('type');
         if($type == 'deattach')
             $type_value = '1677';
