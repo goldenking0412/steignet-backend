@@ -31,7 +31,7 @@ class MispricingController extends Controller
     public function MisPricing(){
         $result = Property::join('listing','property.id','=','listing.property_id')
                         ->join('AVM','property.id','=','AVM.property_id')
-                        ->select('AVM.avm_value','listing.ListPrice',DB::raw('((AVM.avm_value - listing.ListPrice)/listing.Listprice)*100 as delta'),'listing.listingsource')
+                        ->select('AVM.avm_value','listing.ListPrice',DB::raw('((AVM.avm_value - listing.ListPrice)/listing.Listprice)*100 as delta'),'listing.listingsource','date_retreived')
                         ->where('AVM.avm_value','>',0)
                         ->where('AVM.avm_value','>','listing.Listprice')
                         ->get();
