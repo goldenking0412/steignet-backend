@@ -71,7 +71,7 @@ class RouteServiceProvider extends ServiceProvider
             'prefix' => 'api',
         ], function ($router) {
              //Add you routes here, for example:
-             Route::apiResource('/steignet-search','SearchController@SearchData');
+             Route::apiResource('/steignet-search','SearchController');
         });
 
     }
