@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 |
 | Here is where you can register API routes for your application. These
 | routes are loaded by the RouteServiceProvider within a group which
-| is assigned the "api" middleware group. Enjoy building your API!
+| is assigned the "api" middleware group. Enjoy building your API!	
 |
 */
 
@@ -22,3 +22,6 @@ Route::get('/craglist-data', 'InventoryController@Craglist');
 Route::get('/passthrough', 'InventoryController@PassThrough');
 Route::get('/master_inventory', 'InventoryController@Master_inventory');
 Route::get('/mispricing', 'MispricingController@Mispricing');
+Route::get('/avm_checker', 'InventoryController@AVMChecker');
+Route::get('/surface_mispricing', 'MispricingController@SurfaceMispricing');
+Route::get('/top_mispricing', 'MispricingController@TopMispricing');

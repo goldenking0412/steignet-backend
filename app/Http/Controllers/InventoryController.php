@@ -10,6 +10,7 @@ use App\Steignetdata;
 use App\Craglist;
 use App\SecretKey;
 use App\MasterInventory;
+use App\AVM_Checker;
 use DB;
 use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\Model;
@@ -57,4 +58,8 @@ class InventoryController extends Controller
         return $result;
     }
 
+    public function AVMChecker(){
+        $result = AVM_Checker::get();
+        return $result;
+    }
 }

@@ -12,6 +12,8 @@ use App\SecretKey;
 use App\MasterInventory;
 use App\Listing;
 use App\Property;
+use App\Surface_Level_Mispricings;
+use App\Top_MLS_Mispricings;
 use DB;
 use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\Model;
@@ -37,5 +39,12 @@ class MispricingController extends Controller
                         ->get();
         return $result;
     }
-
+    public function SurfaceMispricing(){
+        $result = Surface_Level_Mispricings::get();
+        return $result;
+    }
+    public function TopMispricing(){
+        $result = Top_MLS_Mispricings::get();
+        return $result;
+    }
 }
