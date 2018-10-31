@@ -11,6 +11,7 @@ use App\Craglist;
 use App\SecretKey;
 use App\MasterInventory;
 use App\AVM_Checker;
+use App\ListingView;
 use DB;
 use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\Model;
@@ -39,8 +40,9 @@ class InventoryController extends Controller
         return $result;
     }
 
-    public function CraglistData(){
-        $result = Craglist::get();
+    public function Craglist(){
+        $result = ListingView::get();
+        //$result = Craglist::get();
         return $result;
     }
 
