@@ -40,10 +40,12 @@ class MispricingController extends Controller
         return $result;
     }
     public function SurfaceMispricing(){
+        ini_set('memory_limit','2048M');
         $result = Surface_Level_Mispricings::get();
         return $result;
     }
     public function TopMispricing(){
+        ini_set('memory_limit','2048M');
         $result = Top_MLS_Mispricings::get();
         return $result;
     }
