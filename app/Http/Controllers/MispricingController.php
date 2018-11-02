@@ -49,4 +49,9 @@ class MispricingController extends Controller
         $result = Top_MLS_Mispricings::get();
         return $result;
     }
+    public function ListingViews(){
+        ini_set('memory_limit','2048M');
+        $result = ListingView::get();
+        return $result;
+    }
 }

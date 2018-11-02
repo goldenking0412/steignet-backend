@@ -64,8 +64,5 @@ class InventoryController extends Controller
         $result = AVM_Checker::get();
         return $result;
     }
-    public function ListingView(){
-        $result = ListingView::get();
-        return $result;
-    }
+    
 }
