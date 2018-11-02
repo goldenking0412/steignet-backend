@@ -25,4 +25,5 @@ Route::get('/mispricing', 'MispricingController@Mispricing');
 Route::get('/avm_checker', 'InventoryController@AVMChecker');
 Route::get('/surface_mispricing', 'MispricingController@SurfaceMispricing');
 Route::get('/top_mispricing', 'MispricingController@TopMispricing');
+Route::get('/listingview', 'MispricingController@ListingView');
 Route::post('/submit-property', 'SubmitPropertyController@submitProperty');
