@@ -14,6 +14,7 @@ use App\Listing;
 use App\Property;
 use App\Surface_Level_Mispricings;
 use App\Top_MLS_Mispricings;
+use App\ListingView;
 use DB;
 use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\Model;
