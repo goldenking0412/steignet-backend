@@ -52,7 +52,7 @@ class MispricingController extends Controller
     }
     public function ListingViews(){
         ini_set('memory_limit','2048M');
-        $result = ListingView::select('BathroomsFull','BedroomsTotal','City','ListPrice','ListingSource','ListingSourceID','MlsStatus','OriginalListPrice','PreviousListPrice','UnitNumber','UnparsedAddress','Zestimate_AVM','Redfin_AVM','yearbuilt','SubdivisionName','livingarea','TaxBookNumber')->get();
+        $result = ListingView::select('BathroomsFull','BedroomsTotal','City','ListPrice','ListingSource','ListingSourceID','MlsStatus','OriginalListPrice','PreviousListPrice','UnitNumber','UnparsedAddress','Zestimate_AVM','Redfin_AVM','yearbuilt','SubdivisionName','livingarea','TaxBookNumber','ListingContractDate')->get();
         return $result;
     }
 }
