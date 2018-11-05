@@ -191,7 +191,7 @@ class SearchController extends Controller
         $end_date = $request->input('end_date');
         if($status != ''){
             if($status == 'Acitve'){
-                $result = $result->where('listingcontractdatelistingcontractdate','>=',$start_date)->where('listingcontractdatelistingcontractdate','<=',$end_date);
+                $result = $result->where('listingcontractdate','>=',$start_date)->where('listingcontractdate','<=',$end_date);
             }
             else if($status == 'Active Under Contract'){
                 $result = $result->where('offmarketdate','>=',$start_date)->where('offmarketdate','<=',$end_date);
