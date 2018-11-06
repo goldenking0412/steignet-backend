@@ -43,16 +43,16 @@ class MispricingController extends Controller
     public function SurfaceMispricing(){
         ini_set('memory_limit','-1');
         $result = Surface_Level_Mispricings::get();
-        return $result;
+        return json_encode($result);
     }
     public function TopMispricing(){
         ini_set('memory_limit','-1');
         $result = Top_MLS_Mispricings::get();
-        return $result;
+        return json_encode($result);
     }
     public function ListingViews(){
         ini_set('memory_limit','-1');
         $result = ListingView::select('BathroomsFull','BedroomsTotal','City','ListPrice','ListingSource','ListingSourceID','MlsStatus','OriginalListPrice','PreviousListPrice','UnitNumber','UnparsedAddress','Zestimate_AVM','Redfin_AVM','yearbuilt','SubdivisionName','livingarea','TaxBookNumber','ListingContractDate')->get();
-        return $result;
+        return json_encode($result);
     }
 }

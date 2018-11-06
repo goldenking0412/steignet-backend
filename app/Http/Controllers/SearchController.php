@@ -228,6 +228,6 @@ class SearchController extends Controller
         $result = $result->select('BathroomsFull','BedroomsTotal','City','ListPrice','ListingSource','ListingSourceID','MlsStatus','OriginalListPrice','PreviousListPrice','UnitNumber','UnparsedAddress','Zestimate_AVM','Redfin_AVM','yearbuilt','SubdivisionName','livingarea','TaxBookNumber','ListingContractDate')->get();
         
 
-        return $result;
+        return json_encode($result);
     }
 }
