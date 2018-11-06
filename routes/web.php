@@ -16,6 +16,7 @@ Route::get('/', function () {
 });
 
 Route::get('/login', 'Auth\LoginController@login')->name('login');
+Route::get('register', 'Auth\LoginController@register')->name('register');
 
 Route::get('/load', 'Auth\LoginController@load');
 
